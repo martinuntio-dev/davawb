@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVA Inmobiliaria | Terrenos en Tarapoto</title>
+    <meta name="description" content="Protegemos tu patrimonio y optimizamos tu inversión inmobiliaria con propuestas ideales.">
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for standalone file) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Lightweight SVG Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Configuration based on JSON Design System -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            forest: '#E62B2B', // Principal (Brand Red - Solicitado)
+                            action: '#C52222', // Action (Darker Red para Hover/Depth)
+                            mint: '#FFF5F5',   // Soft bg (Rose Tint para armonizar con rojo)
+                            gold: '#D4AF37',   // Accent (Gold ajustado)
+                            navy: '#2B0505',   // Deep secondary (Dark Burgundy/Black)
+                        },
+                        neutral: {
+                            soft: '#F8F9FA',
+                            text: '#212529',
+                            muted: '#6C757D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+                        serif: ['Roboto', 'sans-serif'], // Reemplazado por Roboto
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0,0,0,0.05)',
+                        'card-hover': '0 10px 15px rgba(230, 43, 43, 0.1)', // Sombra con tinte rojo sutil
+                    },
+                    borderRadius: {
+                        'std': '4px', // Standard radius from JSON
+                        'card': '8px',
+                    },
+                    maxWidth: {
+                        'container': '1200px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+        /* Selection color to match brand */
+        ::selection {
+            background-color: #E62B2B;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-text antialiased bg-neutral-soft">
+
+    <!-- Navigation (Sticky & Transparent-to-Solid) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent text-white py-4">
+        <div class="max-w-container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-serif font-bold tracking-wide flex items-center gap-2 group">
+                <i class="ph ph-house-line text-brand- text-3xl group-hover:text-brand-forest transition-colors"></i>
+                <span>DAVA <span class="text-brand-forest">Inmobiliaria</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
+                <a href="#propiedades" class="hover:text-brand-forest transition-colors">PROPIEDADES</a>
+                <a href="servicios.html" class="hover:text-brand-forest transition-colors">SERVICIOS</a>
+                <a href="#contacto" class="hover:text-brand-forest transition-colors">NOSOTROS</a>
+                <a href="#contacto" class="bg-brand-forest hover:bg-brand-action text-white px-6 py-3 rounded-std transition-all shadow-sm">
+                    CONTACTAR
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none hover:text-brand-forest transition-colors">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="bg-white md:hidden shadow-lg absolute w-full left-0 top-full">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-neutral-text font-medium">
+            
+                <a href="#propiedades" class="hover:text-brand-forest">PROPIEDADES</a>
+                <a href="servicios.html" class="hover:text-brand-forest">SERVICIOS</a>
+                <a href="#propiedades" class="hover:text-brand-forest">NOSOTROS</a>
+                <a href="#contacto" class="block text-center bg-brand-forest hover:bg-brand-action text-white px-6 py-3 rounded-std transition-colors">
+                    CONTACTAR
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="ima/back345a.jpg" 
+                alt="DAVA Inmobiliaria terrenos en Tarapoto" 
+                class="w-full h-full object-cover"
+            >
+            <!-- Overlay Gradient (Dark Burgundy to Red/Forest tint) -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-navy/70 to-brand-forest/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-container px-6 text-center text-white mt-16">
+            <!-- Logo Central -->
+            <img 
+                src="ima/logo1080circle.png" 
+                alt="Logo DAVA Inmobiliaria" 
+                class="w-20 md:w-24 mx-auto mb-6 shadow-lg rounded-full"
+                onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='block';"
+            >
+            <!-- Fallback icon if logo image fails -->
+            <i id="logo-placeholder" class="ph ph-house-line text-6xl text-white mb-6 hidden mx-auto"></i>
+
+            <span class="block text-brand-gold font-medium tracking-widest text-sm mb-4 uppercase">Tus Aliados de Confianza</span>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6 text-shadow">
+                Inversiones seguras, <br> futuros brillantes.
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-100">
+                Protegemos tu patrimonio y optimizamos tu inversión inmobiliaria con la seguridad que mereces en la selva peruana.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#propiedades" class="bg-brand-forest hover:bg-brand-action text-white px-8 py-4 rounded-std font-medium transition-all duration-300 shadow-lg border border-transparent">
+                    VER PROPIEDADES
+                </a>
+                <a href="#contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-forest text-white px-8 py-4 rounded-std font-medium transition-all duration-300">
+                    CONTÁCTANOS
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro / Stats Section -->
+    <section class="py-16 bg-white relative -mt-10 z-20 mx-4 md:mx-auto max-w-container rounded-card shadow-card">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div class="p-4 group">
+                <span class="block text-4xl font-bold text-brand-forest mb-2 group-hover:scale-110 transition-transform duration-300">+120</span>
+                <span class="text-neutral-muted font-medium text-sm tracking-wide">INMUEBLES VENDIDOS</span>
+            </div>
+            <div class="p-4 group">
+                <span class="block text-4xl font-bold text-brand-forest mb-2 group-hover:scale-110 transition-transform duration-300">+100</span>
+                <span class="text-neutral-muted font-medium text-sm tracking-wide">CLIENTES SATISFECHOS</span>
+            </div>
+            <div class="p-4 group">
+                <span class="block text-4xl font-bold text-brand-forest mb-2 group-hover:scale-110 transition-transform duration-300">8 AÑOS</span>
+                <span class="text-neutral-muted font-medium text-sm tracking-wide">DE EXPERIENCIA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="propiedades" class="py-20 bg-brand-mint">
+        <div class="max-w-container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-forest mb-4">Propiedades Destacadas</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-neutral-muted max-w-2xl mx-auto">
+                    Encuentra terrenos, casas de campo y oportunidades de inversión en Tarapoto y alrededores.
+                </p>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="ima/ad140324B.jpg" 
+                            alt="Terreno a 15 minutos de Tarapoto" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Juan Guerra, San Martín</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Lotes Urbanos Vista Hermosa</h3>
+                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
+                            Desde 140 m2, acceso a agua y luz, a 15 min de Tarapoto. Facilidades de pago disponibles.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+                            <span class="text-brand-forest font-bold text-lg">S/ 24,000</span>
+                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
+                                Ver Detalles <i class="ph ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="ima/recrecamps.jpg" 
+                            alt="Recreo turistico en Tarapoto" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Banda de Shilcayo</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Recreo Campestre de Estreno</h3>
+                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
+                            Excelente oportunidad de inversión. Bungalows y piscina de estreno, 6800 m2.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+                            <span class="text-brand-forest font-bold text-lg">Consultar</span>
+                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
+                                Ver Detalles <i class="ph ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img 
+                            src="ima/terreno-23-ha.jpg" 
+                            alt="Terreno Inversion" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Morales, Tarapoto</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Hermoso Terreno Casa Campo</h3>
+                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
+                            1574 m2, Energía eléctrica, excelente ubicación cerca a la ciudad con naturaleza.
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+                            <span class="text-brand-forest font-bold text-lg">USD $80,000</span>
+                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
+                                Ver Detalles <i class="ph ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-brand-forest text-brand-forest hover:bg-brand-forest hover:text-white px-8 py-3 rounded-std font-semibold transition-all duration-300">
+                    VER TODO EL INVENTARIO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Value Prop -->
+    <section id="servicios" class="py-20 bg-neutral-soft overflow-hidden">
+        <div class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">Soluciones Inmobiliarias</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-brand-navy">¿Por qué elegir a DAVA Inmobiliaria?</h2>
+                <p class="text-neutral-muted mb-8 leading-relaxed">
+                    Nuestra pasión por el trabajo se traduce en resultados. No solo vendemos propiedades; construimos relaciones duraderas basadas en la confianza y el compromiso absoluto.
+                </p>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-brand-forest p-3 rounded-full shrink-0 shadow-lg text-white">
+                            <i class="ph ph-handshake text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-navy">Relaciones Duraderas</h4>
+                            <p class="text-sm text-neutral-muted">Basadas en la confianza y transparencia en cada negociación.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-brand-forest p-3 rounded-full shrink-0 shadow-lg text-white">
+                            <i class="ph ph-shield-check text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-navy">Inversión Segura</h4>
+                            <p class="text-sm text-neutral-muted">Validación legal y técnica de todas nuestras propiedades.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-brand-forest p-3 rounded-full shrink-0 shadow-lg text-white">
+                            <i class="ph ph-users-three text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-navy">Asesoría Integral</h4>
+                            <p class="text-sm text-neutral-muted">Te acompañamos desde la visita hasta la firma en notaría.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Image with decorations -->
+            <div class="relative order-1 md:order-2">
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-brand-forest/10 rounded-full z-0 blur-2xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-gold/20 rounded-full z-0 blur-2xl"></div>
+                
+                <img 
+                    src="ima/algu-preg.jpg" 
+                    alt="Agente Inmobiliario Dava Inmobiliaria" 
+                    class="relative z-10 rounded-card shadow-2xl w-full object-cover aspect-[4/5] border-4 border-white"
+                >
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 border-4 border-brand-forest rounded-full z-20 bg-white flex items-center justify-center shadow-lg">
+                    <i class="ph ph-seal-check text-4xl text-brand-forest"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA (Barra Roja Original) -->
+    <section id="contacto" class="py-20 bg-brand-forest text-white">
+        <div class="max-w-container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div class="md:w-2/3">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">¿Listo para invertir hoy?</h2>
+                    <p class="text-brand-mint text-lg">Déjanos tus datos o escríbenos directamente. Tu futuro empieza hoy.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                    <a href="https://wa.me/51940022764" class="flex items-center justify-center gap-2 bg-white text-brand-forest hover:bg-neutral-100 px-8 py-4 rounded-std transition-all shadow-lg font-bold text-center">
+                        <i class="ph ph-whatsapp-logo text-xl"></i> WhatsApp
+                    </a>
+                    <button class="bg-brand-navy hover:bg-black text-white px-8 py-4 rounded-std transition-all shadow-lg font-bold border border-brand-navy">
+                        Enviar Correo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">Experiencias Reales</span>
+                <h2 class="font-serif italic text-3xl md:text-4xl font-bold text-brand-navy mb-4">Lo que dicen nuestros clientes</h2>
+                <div class="w-16 h-1 bg-brand-forest mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-neutral-soft p-8 rounded-card border border-gray-100 relative shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col">
+                    <div class="text-brand-gold text-4xl mb-4 opacity-50"><i class="ph ph-quotes"></i></div>
+                    <p class="text-neutral-text italic mb-6 flex-grow">
+                        «Excelente experiencia con DAVA Inmobiliaria. Compramos un lote en la selva peruana sin problemas. ¡Ahora disfrutamos de nuestra casa de campo soñada!»
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-200">
+                        <img 
+                            src="ima/opinion1.jpg" 
+                            alt="Opiniones DAVA Inmobiliaria" 
+                            class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md"
+                        >
+                        <div>
+                            <h4 class="font-bold text-brand-navy text-sm uppercase">Laura Herrera Diaz</h4>
+                            <div class="flex text-brand-gold text-xs">
+                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-neutral-soft p-8 rounded-card border border-gray-100 relative shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col">
+                    <div class="text-brand-gold text-4xl mb-4 opacity-50"><i class="ph ph-quotes"></i></div>
+                    <p class="text-neutral-text italic mb-6 flex-grow">
+                        «Altamente recomendados. Encontramos nuestra casa ideal con la ayuda de DAVA Inmobiliaria. Profesionales y dedicados. ¡Gracias por todo!»
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-200">
+                        <img 
+                            src="ima/opinion2.jpg" 
+                            alt="opinion sobre Dava Inmobiliaria" 
+                            class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md"
+                        >
+                        <div>
+                            <h4 class="font-bold text-brand-navy text-sm uppercase">Cristina Del Aguila Torres</h4>
+                            <div class="flex text-brand-gold text-xs">
+                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-neutral-soft p-8 rounded-card border border-gray-100 relative shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col">
+                    <div class="text-brand-gold text-4xl mb-4 opacity-50"><i class="ph ph-quotes"></i></div>
+                    <p class="text-neutral-text italic mb-6 flex-grow">
+                        «Me ayudaron a vender mi propiedad. DAVA Inmobiliaria superó nuestras expectativas con su excelente servicio.»
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-200">
+                        <img 
+                            src="ima/opinion3.jpg" 
+                            alt="testimonio sobre Dava inmobiliaria" 
+                            class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md"
+                        >
+                        <div>
+                            <h4 class="font-bold text-brand-navy text-sm uppercase">Antonio Rivera Pozo</h4>
+                            <div class="flex text-brand-gold text-xs">
+                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW CTA / Question Section (Visual Match) -->
+    <section class="relative py-24 flex items-center justify-center min-h-[500px]">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="ima/fondo-dava1.jpg" 
+                alt="Comunicate con Dava Inmobiliaria" 
+                class="w-full h-full object-cover"
+            >
+            <!-- Overlay slightly dark to pop the white box if needed -->
+            <div class="absolute inset-0 bg-black/20"></div> 
+        </div>
+
+        <!-- White Card -->
+        <div class="relative z-10 bg-white p-8 md:p-14 max-w-3xl mx-4 text-center shadow-2xl rounded-card">
+            <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">TE ESCUCHAMOS</span>
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight">
+                ¡Estamos aquí para responder a todas tus preguntas!
+            </h2>
+            <p class="text-neutral-muted text-base md:text-lg mb-8 leading-relaxed">
+                Nuestro equipo está listo para asesorarte en todo momento y ofrecerte soluciones personalizadas.
+            </p>
+            <a href="https://wa.me/51940022764" class="inline-block bg-brand-forest hover:bg-brand-action text-white text-base md:text-lg px-10 py-4 rounded-std font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                ¡Comunícate con nosotros!
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8 border-t border-red-900/30">
+        <div class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <!-- Brand -->
+            <div>
+                <div class="text-2xl font-serif font-bold tracking-wide flex items-center gap-2 mb-6">
+                    <i class="ph ph-house-line text-brand-forest text-3xl"></i>
+                    <span>DAVA <span class="text-brand-forest">Inmobiliaria</span></span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Expertos en bienes raíces en la selva peruana. Comprometidos con la seguridad de tu inversión y la tranquilidad de tu familia.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/davainmobiliaria" class="bg-white/5 hover:bg-brand-forest p-2 rounded-full transition-colors"><i class="ph ph-facebook-logo text-xl"></i></a>
+                    <a href="https://www.instagram.com/dava.inmobiliaria/" class="bg-white/5 hover:bg-brand-forest p-2 rounded-full transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
+                    <a href="#" class="bg-white/5 hover:bg-brand-forest p-2 rounded-full transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-brand-mint">Contacto</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <i class="ph ph-map-pin text-brand-forest text-lg mt-0.5"></i>
+                        <span>Jr. Sofía Delgado, Tarapoto<br>San Martín, Perú</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph ph-phone text-brand-forest text-lg"></i>
+                        <span>(+51) 940 022 764</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph ph-envelope-simple text-brand-forest text-lg"></i>
+                        <span>contacto@davainmobiliaria.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph ph-clock text-brand-forest text-lg"></i>
+                        <span>Lun - Sab: 9:00 AM - 9:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-brand-mint">Enlaces Rápidos</h4>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li><a href="#" class="hover:text-brand-forest transition-colors flex items-center gap-2"><i class="ph ph-caret-right text-xs"></i> Venta de Terrenos</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors flex items-center gap-2"><i class="ph ph-caret-right text-xs"></i> Casas de Campo</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors flex items-center gap-2"><i class="ph ph-caret-right text-xs"></i> Alquileres</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors flex items-center gap-2"><i class="ph ph-caret-right text-xs"></i> Nosotros</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors flex items-center gap-2"><i class="ph ph-caret-right text-xs"></i> Blog Inmobiliario</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-brand-mint">Legal</h4>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li><a href="#" class="hover:text-brand-forest transition-colors">Política de Privacidad</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors">Libro de Reclamaciones</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-container mx-auto px-6 pt-8 border-t border-white/10 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; 2026 DAVA Inmobiliaria PERÚ. Todos los derechos reservados.</p>
+            <p class="mt-2 md:mt-0 opacity-50">Diseñado con estilo.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/51940022764" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-all z-50 hover:scale-110 flex items-center justify-center border-2 border-white">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const logoText = navbar.querySelectorAll('a, i, span');
+        const mobileMenuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Scrolled state: White bg, red/dark text, shadow
+                navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+                navbar.classList.add('bg-white', 'text-neutral-text', 'shadow-md', 'py-2');
+                
+                // Change logo/menu items specific colors if needed via CSS classes, 
+                // but text-neutral-text handles general readability.
+            } else {
+                // Top state: Transparent bg, white text
+                navbar.classList.add('bg-transparent', 'text-white', 'py-4');
+                navbar.classList.remove('bg-white', 'text-neutral-text', 'shadow-md', 'py-2');
+            }
+        });
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            
+            // Adjust navbar text color for visibility when menu is open
+            const isScrolled = window.scrollY > 50;
+            if (!isScrolled && mobileMenu.classList.contains('open')) {
+                navbar.classList.remove('text-white', 'bg-transparent');
+                navbar.classList.add('text-neutral-text', 'bg-white'); 
+            } else if (!isScrolled) {
+                navbar.classList.add('text-white', 'bg-transparent');
+                navbar.classList.remove('text-neutral-text', 'bg-white');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
