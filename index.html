@@ -6,10 +6,10 @@
     <title>DAVA Inmobiliaria | Terrenos en Tarapoto</title>
     <meta name="description" content="Protegemos tu patrimonio y optimizamos tu inversión inmobiliaria con propuestas ideales.">
     
-    <!-- Google Fonts: Montserrat & Roboto -->
+    <!-- Google Fonts: Montserrat (Actualizado con peso 800), Roboto y Open Sans (Nueva) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (CDN for standalone file) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,11 +24,18 @@
                 extend: {
                     colors: {
                         brand: {
-                            forest: '#E62B2B', // Principal (Brand Red - Solicitado)
-                            action: '#C52222', // Action (Darker Red para Hover/Depth)
-                            mint: '#FFF5F5',   // Soft bg (Rose Tint para armonizar con rojo)
-                            gold: '#D4AF37',   // Accent (Gold ajustado)
-                            navy: '#2B0505',   // Deep secondary (Dark Burgundy/Black)
+                            forest: '#E62B2B', 
+                            action: '#C52222', 
+                            mint: '#FFF5F5',   
+                            gold: '#D4AF37',   
+                            navy: '#2B0505',   
+                        },
+                        // Colores Oficiales del Brand Book DAVA
+                        dava: {
+                            red: '#E3282B',
+                            green: '#2C5E35',
+                            beige: '#F2EFE9',
+                            dark: '#333333'
                         },
                         neutral: {
                             soft: '#F8F9FA',
@@ -38,14 +45,16 @@
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'system-ui', 'sans-serif'],
-                        serif: ['Roboto', 'sans-serif'], // Reemplazado por Roboto
+                        serif: ['Roboto', 'sans-serif'], 
+                        title: ['Montserrat', 'sans-serif'], // Fuente para Títulos Brand Book
+                        body: ['Open Sans', 'sans-serif'],   // Fuente para Textos Brand Book
                     },
                     boxShadow: {
                         'card': '0 4px 6px rgba(0,0,0,0.05)',
-                        'card-hover': '0 10px 15px rgba(230, 43, 43, 0.1)', // Sombra con tinte rojo sutil
+                        'card-hover': '0 10px 15px rgba(230, 43, 43, 0.1)', 
                     },
                     borderRadius: {
-                        'std': '4px', // Standard radius from JSON
+                        'std': '4px', 
                         'card': '8px',
                     },
                     maxWidth: {
@@ -74,7 +83,7 @@
         }
         /* Selection color to match brand */
         ::selection {
-            background-color: #E62B2B;
+            background-color: #E3282B; /* Actualizado al Rojo DAVA */
             color: white;
         }
     </style>
@@ -185,6 +194,10 @@
     <section id="propiedades" class="py-20 bg-brand-mint">
         <div class="max-w-container mx-auto px-6">
             <div class="text-center mb-16">
+                <div class="flex justify-center items-center gap-2 mb-4 text-brand-forest text-4xl md:text-5xl">
+                    <i class="ph ph-house-line"></i>
+                    <i class="ph ph-tree"></i>
+                </div>
                 <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-forest mb-4">Propiedades Destacadas</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto mb-4"></div>
                 <p class="text-neutral-muted max-w-2xl mx-auto">
@@ -195,90 +208,129 @@
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Card 1 -->
-                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img 
-                            src="ad140324B.jpg" 
-                            alt="Terreno a 15 minutos de Tarapoto" 
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                <!-- Card 1 (Aplicando el Mockup del Brand Book) -->
+                <article class="bg-white rounded-xl shadow-xl hover:shadow-2xl overflow-hidden border border-gray-200 group transition-all duration-300 flex flex-col font-body">
+                    <!-- Imagen superior -->
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <img src="ad140324B.jpg" alt="Lotes Urbanos Vista Hermosa" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <!-- Etiqueta superior -->
+                        <div class="absolute top-4 left-4 bg-dava-green text-white font-title font-bold text-xs uppercase px-3 py-1 rounded shadow-md">
+                            Lotes Urbanos
+                        </div>
+                        <!-- Logo flotante -->
+                        <div class="absolute top-4 right-4 bg-white p-1 rounded-full shadow-md z-10">
+                            <img src="logo1080circle.png" alt="DAVA Logo" class="w-10 h-10 rounded-full" onerror="this.src='https://placehold.co/40x40/E3282B/FFFFFF?text=D'">
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
-                            <i class="ph ph-map-pin"></i>
-                            <span>Juan Guerra, San Martín</span>
+                    
+                    <!-- Contenido inferior -->
+                    <div class="p-6 relative flex flex-col flex-grow">
+                        <!-- Cintillo de Precio (El Ancla Visual) -->
+                        <div class="absolute -top-6 right-4 bg-dava-red text-white font-title px-4 py-2 rounded-lg shadow-lg transform rotate-2 z-20">
+                            <span class="block text-[10px] md:text-xs uppercase font-semibold">Cuotas desde</span>
+                            <span class="block text-xl md:text-2xl font-extrabold leading-none">S/ 500</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Lotes Urbanos Vista Hermosa</h3>
-                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
-                            Desde 140 m2, acceso a agua y luz, a 15 min de Tarapoto. Facilidades de pago disponibles.
+
+                        <h3 class="font-title font-extrabold text-xl md:text-2xl text-dava-dark mb-1 pr-16 leading-tight group-hover:text-dava-red transition-colors">Urb. Vista Hermosa</h3>
+                        <p class="text-dava-green font-bold text-base md:text-lg mb-2">Lotes desde 140m²</p>
+                        
+                        <!-- Ítem de Ubicación -->
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="ph ph-map-pin text-dava-red text-lg mr-1"></i>
+                            <span>A 15 min de Tarapoto, Juan Guerra</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow">
+                          Acceso a Agua y Luz, Excelente Ubicación a solo 15 min de Tarapoto. Título Independizado, FACILIDADES DE PAGO, Precio total S/ 24,000.
                         </p>
-                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
-                            <span class="text-brand-forest font-bold text-lg">S/ 24,000</span>
-                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
-                                Ver Detalles <i class="ph ph-arrow-right"></i>
-                            </button>
-                        </div>
+
+                        <button class="w-full bg-dava-red hover:bg-red-700 text-white font-title font-bold py-3 px-4 rounded transition shadow-md mt-auto">
+                            Solicitar Información
+                        </button>
                     </div>
                 </article>
 
-                <!-- Card 2 -->
-                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img 
-                            src="recrecamps.jpg" 
-                            alt="Recreo turistico en Tarapoto" 
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                <!-- Card 2 (Aplicando el Mockup del Brand Book) -->
+                <article class="bg-white rounded-xl shadow-xl hover:shadow-2xl overflow-hidden border border-gray-200 group transition-all duration-300 flex flex-col font-body">
+                    <!-- Imagen superior -->
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <img src="recrecamps.jpg" alt="Recreo Campestre" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <!-- Etiqueta superior -->
+                        <div class="absolute top-4 left-4 bg-dava-green text-white font-title font-bold text-xs uppercase px-3 py-1 rounded shadow-md">
+                            Inversión
+                        </div>
+                        <!-- Logo flotante -->
+                        <div class="absolute top-4 right-4 bg-white p-1 rounded-full shadow-md z-10">
+                            <img src="logo1080circle.png" alt="DAVA Logo" class="w-10 h-10 rounded-full" onerror="this.src='https://placehold.co/40x40/E3282B/FFFFFF?text=D'">
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
-                            <i class="ph ph-map-pin"></i>
+                    
+                    <!-- Contenido inferior -->
+                    <div class="p-6 relative flex flex-col flex-grow">
+                        <!-- Cintillo de Precio -->
+                        <div class="absolute -top-6 right-4 bg-dava-red text-white font-title px-4 py-2 rounded-lg shadow-lg transform rotate-2 z-20">
+                            <span class="block text-[10px] md:text-xs uppercase font-semibold">Oportunidad</span>
+                            <span class="block text-xl md:text-2xl font-extrabold leading-none">Única</span>
+                        </div>
+
+                        <h3 class="font-title font-extrabold text-xl md:text-2xl text-dava-dark mb-1 pr-16 leading-tight group-hover:text-dava-red transition-colors">Recreo Campestre Exclusivo</h3>
+                        <p class="text-dava-green font-bold text-base md:text-lg mb-2">Área de 6,800m²</p>
+                        
+                        <!-- Ítem de Ubicación -->
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="ph ph-map-pin text-dava-red text-lg mr-1"></i>
                             <span>Banda de Shilcayo</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Recreo Campestre de Estreno</h3>
-                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
-                            Excelente oportunidad de inversión. Bungalows y piscina de estreno, 6800 m2.
+                        
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Bungalows y piscina de estreno. Excelente oportunidad de negocio e inversión inmobiliaria.
                         </p>
-                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
-                            <span class="text-brand-forest font-bold text-lg">Consultar</span>
-                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
-                                Ver Detalles <i class="ph ph-arrow-right"></i>
-                            </button>
-                        </div>
+
+                        <button class="w-full bg-dava-red hover:bg-red-700 text-white font-title font-bold py-3 px-4 rounded transition shadow-md mt-auto">
+                            Consultar Precio
+                        </button>
                     </div>
                 </article>
 
-                <!-- Card 3 -->
-                <article class="bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100 group">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img 
-                            src="terreno-23-ha.jpg" 
-                            alt="Terreno Inversion" 
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">Venta</span>
+                <!-- Card 3 (Aplicando el Mockup del Brand Book) -->
+                <article class="bg-white rounded-xl shadow-xl hover:shadow-2xl overflow-hidden border border-gray-200 group transition-all duration-300 flex flex-col font-body">
+                    <!-- Imagen superior -->
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <img src="terreno-23-ha.jpg" alt="Terreno Casa Campo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <!-- Etiqueta superior -->
+                        <div class="absolute top-4 left-4 bg-dava-green text-white font-title font-bold text-xs uppercase px-3 py-1 rounded shadow-md">
+                            Lotes Campestres
+                        </div>
+                        <!-- Logo flotante -->
+                        <div class="absolute top-4 right-4 bg-white p-1 rounded-full shadow-md z-10">
+                            <img src="logo1080circle.png" alt="DAVA Logo" class="w-10 h-10 rounded-full" onerror="this.src='https://placehold.co/40x40/E3282B/FFFFFF?text=D'">
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-1 text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">
-                            <i class="ph ph-map-pin"></i>
+                    
+                    <!-- Contenido inferior -->
+                    <div class="p-6 relative flex flex-col flex-grow">
+                        <!-- Cintillo de Precio -->
+                        <div class="absolute -top-6 right-4 bg-dava-red text-white font-title px-4 py-2 rounded-lg shadow-lg transform rotate-2 z-20">
+                            <span class="block text-[10px] md:text-xs uppercase font-semibold">Precio</span>
+                            <span class="block text-xl md:text-2xl font-extrabold leading-none">S/ 80,000</span>
+                        </div>
+
+                        <h3 class="font-title font-extrabold text-xl md:text-2xl text-dava-dark mb-1 pr-16 leading-tight group-hover:text-dava-red transition-colors">Terreno Casa Campo</h3>
+                        <p class="text-dava-green font-bold text-base md:text-lg mb-2">Terrenos desde 1574m²</p>
+                        
+                        <!-- Ítem de Ubicación -->
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="ph ph-map-pin text-dava-red text-lg mr-1"></i>
                             <span>Morales, Tarapoto</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-brand-navy mb-3 line-clamp-1 group-hover:text-brand-forest transition-colors">Hermoso Terreno Casa Campo</h3>
-                        <p class="text-neutral-muted text-sm mb-4 line-clamp-2">
-                            1574 m2, Energía eléctrica, excelente ubicación cerca a la ciudad con naturaleza.
+                        
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Energía eléctrica, excelente ubicación cerca a la ciudad rodeado de naturaleza. Ideal para tu casa soñada.
                         </p>
-                        <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
-                            <span class="text-brand-forest font-bold text-lg">USD $80,000</span>
-                            <button class="text-brand-forest text-sm font-semibold hover:text-brand-action transition-colors flex items-center gap-1">
-                                Ver Detalles <i class="ph ph-arrow-right"></i>
-                            </button>
-                        </div>
+
+                        <button class="w-full bg-dava-red hover:bg-red-700 text-white font-title font-bold py-3 px-4 rounded transition shadow-md mt-auto">
+                            Solicitar Información
+                        </button>
                     </div>
                 </article>
 
@@ -296,6 +348,9 @@
     <section id="servicios" class="py-20 bg-neutral-soft overflow-hidden">
         <div class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1">
+                <div class="flex mb-4 text-brand-forest text-5xl drop-shadow-sm">
+                    <i class="ph ph-handshake"></i>
+                </div>
                 <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">Soluciones Inmobiliarias</span>
                 <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-brand-navy">¿Por qué elegir a DAVA Inmobiliaria?</h2>
                 <p class="text-neutral-muted mb-8 leading-relaxed">
@@ -373,6 +428,10 @@
     <section id="testimonios" class="py-20 bg-white">
         <div class="max-w-container mx-auto px-6">
             <div class="text-center mb-16">
+                <!-- Estrella dorada principal corregida -->
+                <div class="flex justify-center mb-3 text-brand-gold text-4xl">
+                    <i class="ph-fill ph-star drop-shadow-md"></i>
+                </div>
                 <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">Experiencias Reales</span>
                 <h2 class="font-serif italic text-3xl md:text-4xl font-bold text-brand-navy mb-4">Lo que dicen nuestros clientes</h2>
                 <div class="w-16 h-1 bg-brand-forest mx-auto mb-4"></div>
@@ -393,8 +452,9 @@
                         >
                         <div>
                             <h4 class="font-bold text-brand-navy text-sm uppercase">Laura Herrera Diaz</h4>
+                            <!-- Estrellas pequeñas corregidas -->
                             <div class="flex text-brand-gold text-xs">
-                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                             </div>
                         </div>
                     </div>
@@ -414,8 +474,9 @@
                         >
                         <div>
                             <h4 class="font-bold text-brand-navy text-sm uppercase">Cristina Del Aguila Torres</h4>
+                            <!-- Estrellas pequeñas corregidas -->
                             <div class="flex text-brand-gold text-xs">
-                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                             </div>
                         </div>
                     </div>
@@ -435,8 +496,9 @@
                         >
                         <div>
                             <h4 class="font-bold text-brand-navy text-sm uppercase">Antonio Rivera Pozo</h4>
+                            <!-- Estrellas pequeñas corregidas -->
                             <div class="flex text-brand-gold text-xs">
-                                <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i>
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                             </div>
                         </div>
                     </div>
@@ -460,6 +522,9 @@
 
         <!-- White Card -->
         <div class="relative z-10 bg-white p-8 md:p-14 max-w-3xl mx-4 text-center shadow-2xl rounded-card">
+            <div class="flex justify-center mb-4 text-brand-forest text-5xl">
+                <i class="ph ph-headset"></i>
+            </div>
             <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">TE ESCUCHAMOS</span>
             <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight">
                 ¡Estamos aquí para responder a todas tus preguntas!
@@ -531,8 +596,8 @@
             <div>
                 <h4 class="font-bold text-lg mb-6 text-brand-mint">Legal</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
-                    <li><a href="politica-de-privacidad.html" class="hover:text-brand-forest transition-colors">Política de Privacidad</a></li>
-                    <li><a href="politica-de-privacidad.html" class="hover:text-brand-forest transition-colors">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors">Política de Privacidad</a></li>
+                    <li><a href="#" class="hover:text-brand-forest transition-colors">Términos y Condiciones</a></li>
                     <li><a href="#" class="hover:text-brand-forest transition-colors">Libro de Reclamaciones</a></li>
                 </ul>
             </div>
@@ -562,9 +627,6 @@
                 // Scrolled state: White bg, red/dark text, shadow
                 navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
                 navbar.classList.add('bg-white', 'text-neutral-text', 'shadow-md', 'py-2');
-                
-                // Change logo/menu items specific colors if needed via CSS classes, 
-                // but text-neutral-text handles general readability.
             } else {
                 // Top state: Transparent bg, white text
                 navbar.classList.add('bg-transparent', 'text-white', 'py-4');
