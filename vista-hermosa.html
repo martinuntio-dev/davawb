@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista Hermosa | Lotes en Juan Guerra, Tarapoto</title>
     <meta name="description" content="Invierte en tu terreno propio a 20 min de Tarapoto. Título independizado, financiamiento directo 0% interés y sin evaluar Infocorp. ¡Últimos 7 lotes!">
-      <!-- Favicon de DAVA Inmobiliaria -->
-    <link rel="icon" href="logo1080circle.png" type="image/png">
+    
     <!-- Open Graph / Redes Sociales (WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.tudominio.com/"> <!-- Cambia esto por tu dominio real -->
+    <meta property="og:url" content="https://www.davainmobiliaria.com/"> <!-- Cambia esto por tu dominio real -->
     <meta property="og:title" content="Vista Hermosa | Lotes en Juan Guerra, Tarapoto">
     <meta property="og:description" content="Asegura tu patrimonio con título independizado, sin bancos y sin evaluar Infocorp. ¡Últimos 7 lotes disponibles!">
     <meta property="og:image" content="back345a.jpg"> <!-- Imagen destacada al compartir -->
@@ -19,6 +18,9 @@
     <meta name="twitter:title" content="Vista Hermosa | Lotes en Juan Guerra">
     <meta name="twitter:description" content="Invierte en Tarapoto con financiamiento directo 0% interés.">
     <meta name="twitter:image" content="back345a.jpg">
+
+<!-- Favicon de DAVA Inmobiliaria -->
+    <link rel="icon" href="logo1080circle.png" type="image/png">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,9 +101,24 @@
                     <!-- Logo DAVA -->
                     <img class="h-16 w-auto" src="logo1080circle.png" alt="DAVA Inmobiliaria Logo">
                 </div>
+
+                <!-- Título Móvil (Solo visible en celulares) -->
+                <div class="md:hidden flex-grow text-center font-heading font-bold text-forest text-lg px-2 leading-tight">
+                    Urb. Vista Hermosa
+                </div>
+
+                <!-- Botón Menú Móvil (Hamburguesa) -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-dava focus:outline-none transition">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+
                 <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#proyecto" class="text-gray-600 hover:text-dava font-bold transition">Proyecto</a>
                     <a href="#beneficios" class="text-gray-600 hover:text-dava font-bold transition">Beneficios</a>
                     <a href="#ubicacion" class="text-gray-600 hover:text-dava font-bold transition">Ubicación</a>
+                    <a href="#propietarios" class="text-gray-600 hover:text-dava font-bold transition">Propietarios</a>
                     <a href="#inversion" class="text-gray-600 hover:text-dava font-bold transition">Inversión</a>
                     <a href="#contacto" class="bg-dava hover:bg-dava-dark text-white px-6 py-2 rounded-full font-bold transition shadow-lg">
                         Contáctanos
@@ -109,7 +126,50 @@
                 </div>
             </div>
         </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl absolute w-full left-0 border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="#proyecto" class="mobile-link block px-3 py-4 text-base font-bold text-gray-800 hover:text-dava hover:bg-gray-50 border-b border-gray-100">Proyecto</a>
+                <a href="#beneficios" class="mobile-link block px-3 py-4 text-base font-bold text-gray-800 hover:text-dava hover:bg-gray-50 border-b border-gray-100">Beneficios</a>
+                <a href="#ubicacion" class="mobile-link block px-3 py-4 text-base font-bold text-gray-800 hover:text-dava hover:bg-gray-50 border-b border-gray-100">Ubicación</a>
+                <a href="#propietarios" class="mobile-link block px-3 py-4 text-base font-bold text-gray-800 hover:text-dava hover:bg-gray-50 border-b border-gray-100">Propietarios</a>
+                <a href="#inversion" class="mobile-link block px-3 py-4 text-base font-bold text-gray-800 hover:text-dava hover:bg-gray-50 border-b border-gray-100">Inversión</a>
+                <a href="#contacto" class="mobile-link block mt-4 px-3 py-3 text-base font-bold text-white bg-dava hover:bg-dava-dark text-center rounded-lg shadow-md">Contáctanos</a>
+            </div>
+        </div>
     </nav>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+            const links = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                // Cambia el ícono de hamburguesa a una "X" y viceversa
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 
     <!-- Hero Section -->
     <header class="bg-hero min-h-screen flex items-center pt-20">
@@ -158,7 +218,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-1">Número de WhatsApp</label>
-                            <input type="tel" id="telefono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-dava focus:border-dava outline-none transition" placeholder="+51 999 999 999">
+                            <input type="tel" id="telefono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-dava focus:border-dava outline-none transition" placeholder="+51 955179222">
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-1">Ciudad de residencia</label>
@@ -181,7 +241,7 @@
                             var ciudad = document.getElementById('ciudad').value;
                             
                             // REEMPLAZA ESTE NÚMERO POR EL TUYO (con código de país, sin el símbolo +)
-                            var numeroEmpresa = "51999999999"; 
+                            var numeroEmpresa = "51955179222"; 
                             
                             // Creamos el mensaje personalizado
                             var mensaje = "Hola DAVA Inmobiliaria 🏡.%0A%0ASoy *" + nombre + "* de *" + ciudad + "*. Mi número es " + telefono + ".%0A%0AMe interesan los últimos lotes en *Vista Hermosa*. ¿Me pueden enviar el plano y la lista de precios?";
@@ -212,11 +272,74 @@
         </div>
     </section>
 
+    <!-- Sección del Proyecto / Galería y Características -->
+    <section id="proyecto" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <i class="fa-solid fa-camera-retro text-dava text-5xl mb-4 inline-block"></i>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-forest mb-4">Descubre Vista Hermosa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Un proyecto diseñado en perfecta armonía con la naturaleza, ofreciendo las características ideales para construir el hogar de tus sueños o asegurar una inversión rentable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Lista de Características -->
+                <div class="order-2 lg:order-1">
+                    <h3 class="font-heading text-2xl font-bold text-gray-800 mb-6 border-l-4 border-dava pl-4">Características Principales</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <i class="fa-solid fa-ruler-combined text-dava mt-1 mr-4 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg">Lotes Listos para Construir</h4>
+                                <p class="text-gray-600 mt-1">Dimensiones ideales para proyectar una casa de campo amplia, con suficiente espacio para incorporar piscina, zona de parrillas y jardines privados.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <i class="fa-solid fa-mountain-sun text-dava mt-1 mr-4 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg">Topografía Favorable</h4>
+                                <p class="text-gray-600 mt-1">Terrenos con relieve óptimo y llano que minimizan drásticamente los costos de nivelación al momento de iniciar tu obra civil.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <i class="fa-solid fa-route text-dava mt-1 mr-4 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg">Vías y Accesos Afirmados</h4>
+                                <p class="text-gray-600 mt-1">Calles internas trazadas y afirmadas que garantizan un ingreso vehicular fluido y seguro hacia la puerta de cada uno de los lotes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Imagen Principal Destacada -->
+                <div class="order-1 lg:order-2 relative group">
+                    <img src="168174vistaher.jpg" alt="Vista del terreno verde en Tarapoto" class="rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-white transition duration-500 group-hover:scale-[1.02]">
+                    <div class="absolute -bottom-6 -left-6 bg-forest text-white p-4 rounded-xl shadow-xl border-2 border-white">
+                        <p class="font-bold font-heading"><i class="fa-solid fa-leaf mr-2 text-green-400"></i>Entorno 100% Natural</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería de Fotos (Grid) -->
+            <h3 class="font-heading text-2xl font-bold text-center text-gray-800 mb-8 mt-12">Galería del Entorno</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="block overflow-hidden rounded-2xl shadow-md group cursor-pointer">
+                    <img src="8174vistaher.jpg" alt="Naturaleza Tarapoto" class="w-full h-64 object-cover transform transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="block overflow-hidden rounded-2xl shadow-md group cursor-pointer">
+                    <img src="agua164vistaher.jpg" alt="Paisaje Verde" class="w-full h-64 object-cover transform transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="block overflow-hidden rounded-2xl shadow-md group cursor-pointer">
+                    <img src="lagunaazul234.jpg" alt="Cielo Tarapoto" class="w-full h-64 object-cover transform transition duration-700 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Beneficios Principales -->
     <section id="beneficios" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-              <i class="fa-solid fa-shield-halved text-dava text-5xl mb-4 inline-block"></i>
+                <i class="fa-solid fa-shield-halved text-dava text-5xl mb-4 inline-block"></i>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-forest mb-4">¿Por qué invertir en Vista Hermosa?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hemos diseñado una propuesta pensando en la seguridad y tranquilidad del inversionista, eliminando barreras bancarias y riesgos legales.</p>
             </div>
@@ -257,7 +380,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                <i class="fa-solid fa-map-location-dot text-dava text-5xl mb-4 block"></i>
+                    <i class="fa-solid fa-map-location-dot text-dava text-5xl mb-4 block"></i>
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-forest mb-6">Ubicación Estratégica en Juan Guerra</h2>
                     <p class="text-lg text-gray-600 mb-6">
                         Ubicada al sur de Tarapoto, el distrito de <strong>Juan Guerra</strong> es actualmente la zona de mayor expansión y plusvalía de la región.
@@ -285,7 +408,7 @@
                 </div>
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl h-96 group">
                     <!-- Placeholder de mapa o imagen de la zona -->
-                    <img src="back345a.jpg?q=80&w=2070&auto=format&fit=crop" alt="Paisaje de la selva peruana" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1596395819057-cb7bf32f6cb5?q=80&w=2070&auto=format&fit=crop" alt="Paisaje de la selva peruana" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8">
                         <p class="text-white font-bold text-xl"><i class="fa-solid fa-location-dot text-dava mr-2"></i> Juan Guerra, San Martín</p>
                     </div>
@@ -294,8 +417,80 @@
         </div>
     </section>
 
+    <!-- Sección de Prueba Social (Propietarios) -->
+    <section id="propietarios" class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <i class="fa-solid fa-users-viewfinder text-dava text-5xl mb-4 inline-block"></i>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-forest mb-4">Familias que ya aseguraron su futuro</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">La confianza se demuestra con hechos. Ellos ya invirtieron, recibieron su <strong class="text-dava">Título de Propiedad Independizado</strong> y forman parte de DAVA Inmobiliaria.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Propietario 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition duration-300 relative group">
+                    <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 flex items-center shadow-md">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Título Entregado
+                    </div>
+                    <div class="h-64 overflow-hidden">
+                        <img src="titulo1fba145.jpg" alt="Propietaria feliz con su título" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex text-yellow-400 mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Buscaba un terreno seguro para mis ahorros y el no tener que pasar por bancos ni Infocorp me facilitó todo. Me entregaron mi título súper rápido."</p>
+                        <h4 class="font-bold text-gray-800 text-lg">Familia Mendoza</h4>
+                        <p class="text-sm text-gray-500"><i class="fa-solid fa-location-dot text-dava mr-1"></i> Inversionistas de Lima</p>
+                    </div>
+                </div>
+
+                <!-- Propietario 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition duration-300 relative group transform md:-translate-y-4">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 flex items-center shadow-md">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Título Entregado
+                    </div>
+                    <div class="h-64 overflow-hidden">
+                        <img src="titulo2ba145.jpg" alt="Propietario recibiendo su título" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex text-yellow-400 mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"La atención de DAVA Inmobiliaria fue A1. Visité el terreno en Juan Guerra y es hermoso, ya tengo mi escritura pública. ¡Recomendadísimo!"</p>
+                        <h4 class="font-bold text-gray-800 text-lg">Carlos R.</h4>
+                        <p class="text-sm text-gray-500"><i class="fa-solid fa-location-dot text-dava mr-1"></i> Residente en Tarapoto</p>
+                    </div>
+                </div>
+
+                <!-- Propietario 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-xl transition duration-300 relative group">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 flex items-center shadow-md">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Título Entregado
+                    </div>
+                    <div class="h-64 overflow-hidden">
+                        <img src="titulo3ba145.jpg" alt="Familia en su nuevo terreno" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex text-yellow-400 mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Aprovechamos el financiamiento directo sin intereses. Nos dio mucha confianza ver que los papeles de la matriz y la independización estaban en regla."</p>
+                        <h4 class="font-bold text-gray-800 text-lg">Familia Salinas</h4>
+                        <p class="text-sm text-gray-500"><i class="fa-solid fa-location-dot text-dava mr-1"></i> Inversionistas de Trujillo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 font-bold mb-4">¿Quieres ser el siguiente?</p>
+                <a href="#contacto" class="inline-block border-2 border-dava text-dava hover:bg-dava hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">Solicitar copia de modelo de contrato</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Planes de Inversión -->
-    <section id="inversion" class="py-20 bg-white">
+    <section id="inversion" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <i class="fa-solid fa-hand-holding-dollar text-dava text-5xl mb-4 inline-block"></i>
@@ -360,9 +555,9 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <i class="fa-solid fa-stopwatch text-yellow-400 text-6xl mb-4 inline-block"></i>
             <h2 class="font-heading text-4xl md:text-5xl font-extrabold mb-6">No te quedes sin tu lote en la selva</h2>
-            <p class="text-xl font-light mb-10 text-gray-200">De 42 lotes originales, <strong>solo nos quedan 7</strong>. Comunícate con nuestro asesor ahora mismo para enviarte el plano de ubicación exacta y disponibilidad en tiempo real.</p>
+            <p class="text-xl font-light mb-10 text-gray-200">De 42 lotes originales, <strong>solo nos quedan 7</strong>. Comunícate con un asesor inmobiliario ahora mismo para enviarte el plano de ubicación exacta y disponibilidad en tiempo real.</p>
             
-            <a href="https://wa.me/51940022764?text=Hola,%20vengo%20de%20la%20página%20web.%20Quiero%20información%20de%20los%20lotes%20en%20Vista%20Hermosa." target="_blank" class="inline-block bg-dava hover:bg-dava-dark text-white font-bold text-xl py-5 px-10 rounded-full shadow-2xl transition transform hover:scale-105 pulse-animation">
+            <a href="https://wa.me/51999999999?text=Hola,%20vengo%20de%20la%20página%20web.%20Quiero%20información%20de%20los%207%20lotes%20restantes%20en%20Vista%20Hermosa." target="_blank" class="inline-block bg-dava hover:bg-dava-dark text-white font-bold text-xl py-5 px-10 rounded-full shadow-2xl transition transform hover:scale-105 pulse-animation">
                 <i class="fa-brands fa-whatsapp text-2xl align-middle mr-2"></i> Chatear por WhatsApp
             </a>
             <p class="mt-6 text-sm text-gray-400">Atención inmediata. Sin compromisos.</p>
@@ -373,7 +568,7 @@
     <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
-                <img class="h-12 w-auto mb-4  opacity-70" src="logo1080circle.png" alt="DAVA Inmobiliaria Logo">
+                <img class="h-12 w-auto mb-4 opacity-70" src="logo1080circle.png" alt="DAVA Inmobiliaria Logo">
                 <p class="text-sm">© 2026 DAVA Inmobiliaria. Todos los derechos reservados.</p>
             </div>
             <div class="flex space-x-6">
@@ -385,7 +580,7 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/51940022764?text=Hola,%20vengo%20de%20la%20página%20web.%20Quiero%20información%20de%20los%20lotes%20en%20Vista%20Hermosa." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/51999999999?text=Hola,%20vengo%20de%20la%20página%20web.%20Quiero%20información%20de%20los%20lotes%20en%20Vista%20Hermosa." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
