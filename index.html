@@ -86,7 +86,9 @@
 
     <!-- Tailwind Configuration based on JSON Design System -->
     <script>
-        tailwind.config = {
+        // Corrección del ReferenceError inicializando window.tailwind
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -126,6 +128,16 @@
                     },
                     maxWidth: {
                         'container': '1200px',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%': { boxShadow: '0 0 0 0 rgba(227, 40, 43, 0.7)' },
+                            '70%': { boxShadow: '0 0 0 15px rgba(227, 40, 43, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(227, 40, 43, 0)' }
+                        }
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2s infinite',
                     }
                 }
             }
@@ -228,8 +240,8 @@
                 Inversiones inmobiliarias seguras <br> en Tarapoto.
             </h1>
             
-            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-100">
-                Protegemos tu patrimonio y optimizamos tu inversión con la venta de terrenos urbanos y lotes de campo ideales.
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-100 leading-relaxed">
+                Transformamos tu capital en inversiones sólidas. Descubre terrenos urbanos y lotes campestres con alta plusvalía y total seguridad jurídica en la selva peruana.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#propiedades" class="bg-brand-forest hover:bg-brand-action text-white px-8 py-4 rounded-std font-medium transition-all duration-300 shadow-lg border border-transparent">
@@ -269,7 +281,7 @@
                     <i class="ph ph-tree"></i>
                 </div>
                 <!-- SEO H2: Keyword "Tarapoto" -->
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-forest mb-4">Terrenos y Propiedades Destacadas en Tarapoto</h2>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-forest mb-4">Terrenos y Propiedades Destacadas en Tarapoto y alrededores</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto mb-4"></div>
                 <p class="text-neutral-muted max-w-2xl mx-auto">
                     Encuentra lotes urbanos, casas de campo y oportunidades de alta plusvalía e inversión en San Martín.
@@ -599,7 +611,7 @@
             <p class="text-neutral-muted text-base md:text-lg mb-8 leading-relaxed">
                 Nuestros agentes están listos para asesorarte en todo momento y ofrecerte el terreno ideal según tu presupuesto.
             </p>
-            <a href="https://wa.me/51940022764" class="inline-block bg-brand-forest hover:bg-brand-action text-white text-base md:text-lg px-10 py-4 rounded-std font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <a href="https://wa.me/51940022764" class="inline-block bg-brand-forest hover:bg-brand-action text-white text-base md:text-lg px-10 py-4 rounded-std font-bold transition-all transform hover:-translate-y-1 animate-[pulse-glow_2s_infinite]">
                 ¡Habla con un asesor hoy!
             </a>
         </div>
