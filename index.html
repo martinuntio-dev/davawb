@@ -208,7 +208,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <header id="home" class="relative min-h-screen lg:min-h-[850px] flex items-center justify-center overflow-hidden py-24 md:py-48">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img 
@@ -233,7 +233,7 @@
             <!-- Fallback icon if logo image fails -->
             <i id="logo-placeholder" class="ph ph-house-line text-6xl text-white mb-6 hidden mx-auto" aria-hidden="true"></i>
 
-            <span class="block text-brand-gold font-medium tracking-widest text-sm mb-4 uppercase">Tu Inmobiliaria en la Selva Peruana</span>
+            <span class="block text-brand-gold font-medium tracking-widest text-sm mb-4 uppercase">Tu Inmobiliaria en San Martín</span>
             
             <!-- SEO H1: Integramos la Keyword Principal de manera natural y elegante -->
             <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow">
@@ -273,21 +273,30 @@
     </section>
 
     <!-- Properties Section -->
-    <section id="propiedades" class="py-20 bg-brand-mint">
-        <div class="max-w-container mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="flex justify-center items-center gap-2 mb-4 text-brand-forest text-4xl md:text-5xl" aria-hidden="true">
+    <section id="propiedades" class="bg-white pb-20 pt-10 md:pt-16">
+        
+        <!-- Franja Full-Width con Textura y Overlay Verde -->
+        <div class="relative w-full py-20 mb-16 bg-cover bg-center bg-no-repeat" style="background-image: url('fondo-dava1.jpg');">
+            <!-- Capa de superposición Verde Marca -->
+            <div class="absolute inset-0 bg-dava-green/80 z-0"></div>
+            
+            <div class="max-w-container mx-auto px-6 relative z-10 text-center">
+                <div class="flex justify-center items-center gap-2 mb-4 text-brand-gold text-4xl md:text-5xl" aria-hidden="true">
                     <i class="ph ph-house-line"></i>
                     <i class="ph ph-tree"></i>
                 </div>
+                
                 <!-- SEO H2: Keyword "Tarapoto" -->
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-forest mb-4">Terrenos y Propiedades Destacadas en Tarapoto y alrededores</h2>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4 text-shadow">Terrenos y Propiedades Destacadas en Tarapoto</h2>
                 <div class="w-16 h-1 bg-brand-gold mx-auto mb-4"></div>
-                <p class="text-neutral-muted max-w-2xl mx-auto">
+                
+                <p class="text-gray-200 max-w-2xl mx-auto font-body text-lg">
                     Encuentra lotes urbanos, casas de campo y oportunidades de alta plusvalía e inversión en San Martín.
                 </p>
             </div>
+        </div>
 
+        <div class="max-w-container mx-auto px-6">
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
