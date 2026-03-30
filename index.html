@@ -13,7 +13,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.davainmobiliaria.com/">
-    <meta property="og:title" content="DAVA Inmobiliaria | Inversiones Seguras en Tarapoto">
+    <meta property="og:title" content="DAVA Inmobiliaria |Venta de Terrenos y Casas de Campo en Tarapoto">
     <meta property="og:description" content="Descubre los mejores terrenos y lotes urbanos en Tarapoto. Asesoría integral y seguridad para tu inversión en la selva peruana.">
     <meta property="og:image" content="https://www.davainmobiliaria.com/back345a.jpg">
     <meta property="og:site_name" content="DAVA Inmobiliaria">
@@ -60,9 +60,12 @@
 
     <link rel="icon" href="logo1080circle.png" type="image/png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap">
     
    
     
@@ -99,7 +102,7 @@
             </a>
 
             <div class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
-                <a href="#propiedades" class="hover:text-brand-forest transition-colors">PROPIEDADES</a>
+                <a href="#propiedades" title="Ver catálogo de terrenos y casas de campo" class="hover:text-brand-forest transition-colors">PROPIEDADES</a>
                 <a href="servicios.html" class="hover:text-brand-forest transition-colors">SERVICIOS</a>
                 <a href="#contacto" class="hover:text-brand-forest transition-colors">NOSOTROS</a>
                 <a href="#contacto" class="bg-brand-forest hover:bg-brand-action text-white px-6 py-3 rounded-std transition-all shadow-sm">
@@ -157,11 +160,17 @@
                 <a href="#propiedades" class="bg-brand-forest hover:bg-brand-action text-white px-8 py-4 rounded-std font-medium transition-all duration-300 shadow-lg border border-transparent">
                     VER PROPIEDADES
                 </a>
-                <a href="tel:+51940022764" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-forest text-white px-8 py-4 rounded-std font-medium transition-all duration-300">
+                <a href="tel:+51940022764" title="Llamar directamente a un asesor de DAVA Inmobiliaria" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-forest text-white px-8 py-4 rounded-std font-medium transition-all duration-300">
                     CONTÁCTANOS
                 </a>
             </div>
+<div class="w-full text-center mt-4">
+    <span class="text-sm text-gray-300 flex items-center justify-center gap-2">
+        <i class="ph ph-shield-check text-brand-gold"></i> Asesoría 100% gratuita y sin compromiso
+    </span>
+</div>
         </div>
+
     </header>
 
     <section class="py-10 bg-white relative -mt-10 z-10 mx-4 md:mx-auto max-w-container rounded-card shadow-card" aria-label="Estadísticas de la empresa">
@@ -262,7 +271,7 @@
                         </div>
 
                         <h3 class="font-title font-extrabold text-xl md:text-2xl text-dava-dark mb-1 pr-16 leading-tight group-hover:text-dava-red transition-colors">
-                            <a href="https://wa.me/51955179222?text=Hola, %20Quiero%20información%20de%20los%207%20lotes%20restantes%20en%20Vista%20Hermosa." class="hover:underline">Urb. Vista Hermosa</a>
+                            <a href="https://wa.me/51955179222?text=Hola, %20Quiero%20información%20de%20los%207%20lotes%20restantes%20en%20Vista%20Hermosa." title="Contactar por WhatsApp para la Urb. Santa Isabel" class="hover:underline">Urb. Vista Hermosa</a>
                         </h3>
                         <p class="text-dava-green font-bold text-base md:text-lg mb-2">Lotes desde 140m²</p>
                         
@@ -436,14 +445,17 @@
                     <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">¿Listo para asegurar tu patrimonio en Tarapoto?</h2>
                     <p class="text-brand-mint text-lg">Déjanos tus datos o escríbenos directamente. Tu futuro empieza hoy.</p>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                    <a href="https://wa.me/51955179222?text=Hola,%20Quiero%20comunicarme%20con%20un%20asesor." class="flex items-center justify-center gap-2 bg-white text-brand-forest hover:bg-neutral-100 px-8 py-4 rounded-std transition-all shadow-lg font-bold text-center" aria-label="Escríbenos por WhatsApp">
-                        <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i> WhatsApp
-                    </a>
-                    <button class="bg-brand-navy hover:bg-black text-white px-8 py-4 rounded-std transition-all shadow-lg font-bold border border-brand-navy">
-                        Enviar Correo
-                    </button>
-                </div>
+               <div class="flex flex-col w-full md:w-auto items-center">
+    <div class="flex flex-col sm:flex-row gap-4 w-full">
+        <a href="https://wa.me/51955179222?..." title="Escribir al WhatsApp de ventas" class="flex items-center justify-center gap-2 bg-white text-brand-forest hover:bg-neutral-100 px-8 py-4 rounded-std transition-all shadow-lg font-bold text-center">
+            <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i> WhatsApp
+        </a>
+        <button class="bg-brand-navy hover:bg-black text-white px-8 py-4 rounded-std transition-all shadow-lg font-bold border border-brand-navy">
+            Enviar Correo
+        </button>
+    </div>
+    <span class="text-xs text-brand-mint/70 mt-3 font-medium text-center">Tus datos están protegidos. Respuesta en menos de 10 min.</span>
+</div>
             </div>
         </div>
     </section>
@@ -525,7 +537,36 @@
             </div>
         </div>
     </section>
-
+<section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-container mx-auto px-6">
+            <div class="text-center mb-10">
+<div class="flex justify-center mb-3 text-brand-gold text-4xl" aria-hidden="true">
+                    <i class="ph-fill ph-tree drop-shadow-md"></i>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-4">¿Por qué invertir en bienes raíces en Tarapoto y San Martín?</h2>
+                <div class="w-16 h-1 bg-brand-forest mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-neutral-text font-body leading-relaxed">
+                <div>
+                    <p class="mb-4">
+                        La <strong>selva peruana</strong> se ha consolidado como uno de los polos de desarrollo inmobiliario más rentables del país. Comprar un terreno urbano o una casa de campo en Tarapoto no es solo adquirir una propiedad, es asegurar un patrimonio en una zona con una <strong>plusvalía</strong> en constante crecimiento.
+                    </p>
+                    <p>
+                        El excepcional <strong>clima</strong> tropical de San Martín, con sol gran parte del año, lo convierte en el refugio perfecto para quienes buscan alejarse del estrés de la capital, conectarse con la naturaleza y disfrutar de un estilo de vida tranquilo sin perder las comodidades modernas.
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-4">
+                        Además, el auge del <strong>turismo</strong> ecológico y de aventura en la región garantiza un retorno de inversión (ROI) atractivo. Muchas de nuestras propiedades son ideales para proyectos de alquiler a corto plazo (Airbnb) o el desarrollo de complejos recreacionales.
+                    </p>
+                    <p>
+                        En <strong>DAVA Inmobiliaria</strong>, garantizamos que cada metro cuadrado que adquieras cuente con el saneamiento físico legal correspondiente, brindándote la máxima seguridad jurídica en la selva.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="relative py-24 flex items-center justify-center min-h-[500px]">
         <div class="absolute inset-0 z-0">
             <img 
@@ -543,14 +584,18 @@
             </div>
             <span class="text-brand-gold font-medium uppercase tracking-widest text-sm mb-2 block">Asesoría Gratuita</span>
             <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight">
-                ¡Estamos aquí para responder todas tus dudas inmobiliarias!
+                ¡Aquí estamos para responder todas tus dudas inmobiliarias!
             </h2>
             <p class="text-neutral-muted text-base md:text-lg mb-8 leading-relaxed">
                 Nuestros agentes están listos para asesorarte en todo momento y ofrecerte el terreno ideal según tu presupuesto.
             </p>
             <a href="https://wa.me/51955179222?text=Hola,%20Quiero%20comunicarme%20con%20un%20asesor." class="inline-block bg-brand-forest hover:bg-brand-action text-white text-base md:text-lg px-10 py-4 rounded-std font-bold transition-all transform hover:-translate-y-1 animate-[pulse-glow_2s_infinite]">
                 ¡Habla con un asesor hoy!
-            </a>
+            </a><div class="w-full text-center mt-4">
+    <span class="text-sm text-black-300 flex items-center justify-center gap-2">
+        <i class="ph ph-shield-check text-brand-gold"></i> Asesoría 100% gratuita y sin compromiso
+    </span>
+</div>
         </div>
     </section>
 
@@ -618,6 +663,7 @@
             <p>&copy; 2026 DAVA Inmobiliaria PERÚ. Todos los derechos reservados.</p>
             <p class="mt-2 md:mt-0 opacity-50">Diseñado para alto rendimiento.</p>
         </div>
+
     </footer>
 
     <a href="https://wa.me/51955179222?text=Hola,%20Quiero%20comunicarme%20con%20un%20asesor." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] group flex items-center" aria-label="Contactar a un asesor por WhatsApp">
